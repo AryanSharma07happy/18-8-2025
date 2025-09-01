@@ -1,0 +1,79 @@
+<%- include("./base/header") %>
+<%- include("./base/nav") %>
+ <div class=" container">
+       <div class="alert bg-primary text-white text-center my-3"> 
+           <h2> ADD STUDENT </h2>
+       </div>
+    </div>
+     <div class="container">
+         <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="/add/student" method="POST" enctype="multipart/form-data">
+                     <div class="mb-3">
+
+                        <label for="rollNo" class="form-label">RollNo: </label>
+                        <input type="text" class="form-control" id="rollNo" name="rollNo" required>
+                    </div>
+                    <div class="mb-3">
+                         <div class="mb-3">
+
+                        <label for="studentname" class="form-label"> StudentName :</label>
+                        <input type="text" class="form-control" id="studentname" name="studentname" required>
+                    </div>
+
+                        <label for="fatherName" class="form-label">FatherName</label>
+                        <input type="text" class="form-control" id="fatherName" name="fatherName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="course" class="form-label">Course</label>
+                        <select name="course" id="course" class="form-select" required>
+                            <option value="">Select Course</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="BBA">BBA</option>
+                            <option value="MBA">MBA</option>
+                        </select>
+                        <!-- <label for="course" class="form-label">Course</label>
+                        <div data-course="B.Tech,M.Tech,BBA,MBA"></div>
+                        <input type="text" class="form-control" id="course" name="course" required> -->
+                    </div>
+                    <div class="mb-3">
+                    <label for="branch" class="form-label">Branch</label>
+                        <select name="branch" id="branch" class="form-select" required>
+                            <option value="">Select Branch</option>
+                            <option value="CS">CS</option>
+                            <option value="IT">IT</option>
+                            <option value="AI-ML">AI-ML</option>
+                            <option value="ME">ME</option>
+                            <option value="EC">EC</option>
+                        </select>
+                        <!-- <label for="branch" class="form-label">Branch</label>
+                        <div data-branch="CS,IT,AI-ML,ME,EC"></div>
+                        <input type="text" class="form-control" id="branch" name="branch" required> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="yearOfAdmission" class="form-label" >Year Of Admission</label>
+                        <select name="yearOfAdmission" id="yearOfAdmission" class="form-select" required>
+                            <option value="">Select Year Of Admission</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                
+                        </select>
+                     </div>
+                     <div>
+                        <label for="studentImage" class="form-label">Student Image</label>
+                        <input type="file" class="form-control" id="studentImage" name="studentImage" accept="image/*">
+                     </div>
+                    <button type="submit" class="btn btn-warning w-100">Add Student</button>
+                    
+                </form>
+
+            </div>
+
+         </div>
+
+    </div>
+<%- include('base/footer.ejs') %>

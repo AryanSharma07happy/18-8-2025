@@ -1,0 +1,43 @@
+<%- include("./base/header") %>
+    <div class=" container">
+
+       <div class="alert bg-primary text-white text-center my-3"> 
+           <h2> SIGN UP FORM</h2>
+
+       </div>
+    </div>
+    <div class="container">
+         <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="/add/user" method="POST">
+                     <div class="mb-3">
+                        
+                        <label for="firstName" class="form-label">First NAME : </label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="mb-3">
+                         <div class="mb-3">
+                        
+                        <label for="lastName" class="form-label"> LAST NAME :</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    </div>
+
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100">signup</button>
+                    <div>
+                        <a href="/" class="btn btn-danger w-100 my-4" > Login</a>
+                    </div>
+                </form>
+
+            </div>
+
+         </div>
+
+    </div>
+    <%- include("./base/footer") %>

@@ -1,0 +1,62 @@
+<%- include('base/header.ejs') %>
+<nav class="navbar navbar-expand-lg text-white bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Aryan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> <!-- This pushes the nav items to the right -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/student/add/page">Add Student👨‍✈️</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Content👌</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Service🚗</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">List Student</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <div class="container">
+    <div class="alert bg-primary text-white text-center my-3"> 
+        <h2>STUDENT LIST</h2>
+      </div>  
+ </div>
+ <div class="container">
+    <table class="table text-center">
+        <thread>
+            <tr>
+               <th>Student Photos</th>
+                <th>Roll No</th>
+                <th>Student Name</th>
+                <th>Father Name</th>
+                <th>Course</th>
+                <th>Branch</th>
+                <th>Actions</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% students.forEach(student => { %>
+            <tr>
+                <td><img src="<%= student.studentImage %>" alt="Student Photo" width="50px" height="50px" class="img-fluid" /></td>
+                <td><%= student.rollNo %></td>
+                <td><%= student.studentname %></td>
+                <td><%= student.fatherName %></td>
+                <td><%= student.course %></td>
+                <td><%= student.branch %></td>
+                 <td><a href="/edit/student/page/<%= student._id %>" class="btn btn-warning">Edit</a>
+            <a href="/delete/student/<%= student._id %>" class="btn btn-danger">Delete</a>
+        </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+ </div>
+<%- include('base/footer.ejs') %>
